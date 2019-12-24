@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CarListComponent } from './car-list/car-list.component';
+import { CarShowComponent } from './car-show/car-show.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CarListComponent,
+    CarShowComponent
   ],
   imports: [
     BrowserModule,
