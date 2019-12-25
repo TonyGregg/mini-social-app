@@ -7,6 +7,7 @@ import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CarListComponent } from './car-list/car-list.component';
 import { CarShowComponent } from './car-show/car-show.component';
+import { AuthRoutingModule } from './auth-routing.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CarShowComponent } from './car-show/car-show.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
