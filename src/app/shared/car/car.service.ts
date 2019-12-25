@@ -44,9 +44,16 @@ export class CarService {
     // TODO
     // return of([]);
     return this.http.get<any[]>(url).pipe(
-      // Adapt each item in the raw data array
-      map(data => data.map(Car.adapt))
+      // Adapt each item in the raw data array. It uses Model-Adapter pattern
+      map(data => data.map(Car.adapt)),
+        catchError(this.handleError<Car[]>('getAllCars() Spring REST API '))
     );
+    /* how to handle error scenarios?
+     return this.http.get<User>(url).pipe(
+      tap(() => UserService.log('Fetched User by email = ${email}')),
+      catchError(this.handleError<User>('getUserByUserEmail = ${email}'))
+    );
+    */
   } // end of getAllCars method
 
 } // end of CarService class
