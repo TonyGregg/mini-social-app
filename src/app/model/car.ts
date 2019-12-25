@@ -6,6 +6,7 @@ export class Car {
     public name: string,
     public carType: CarType) {}
     static adapt(item: any): Car {
-        return new Car(item.id, item.name, new CarType(item.id, item.priceMin, item.priceMax, item.category));
+        return new Car(item.id, item.name,
+            new CarType(item.carType.id, item.carType.priceMin, item.carType.priceMax, item.carType.category));
     }
 }
