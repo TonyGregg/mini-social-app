@@ -56,4 +56,16 @@ export class CarService {
     */
   } // end of getAllCars method
 
+  getCar(id: number): Observable<Car> {
+    // TODO
+    // return of(new Car(2, 'Tesla', null));
+    const url = '/server/api/v1/cars-social/getCar/' + id;
+
+    return this.http.get<any>(url).pipe(
+      // Adapt each item in the raw car. It uses Model-Adapter pattern
+      map(data => data.map(Car.adapt)),
+        catchError(this.handleError<Car[]>('getCar() = ${id}'))
+    );
+  }
+
 } // end of CarService class
