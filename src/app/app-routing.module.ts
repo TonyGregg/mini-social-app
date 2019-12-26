@@ -7,6 +7,9 @@ import { CarShowComponent } from './car-show/car-show.component';
 
 const routes: Routes = [
   {
+    path: '', redirectTo: 'car-list', pathMatch: 'full'
+  },
+  {
     path: 'car-list',
     component: CarListComponent,
     canActivate: [OktaAuthGuard]
@@ -15,9 +18,6 @@ const routes: Routes = [
     path: 'car-show/:id',
     component: CarShowComponent,
     canActivate: [OktaAuthGuard]
-  },
-  {
-    path: '', redirectTo: 'car-list', pathMatch: 'full'
   }
 ];
 
