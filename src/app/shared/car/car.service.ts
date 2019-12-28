@@ -61,9 +61,8 @@ export class CarService {
     const url = '/server/api/v1/cars-social/getCar/' + id;
 
     return this.http.get<any>(url).pipe(
-      tap(() => this.log('Fetched one car ')),
+      tap(() => this.log('Fetched one car. ')),
         catchError(this.handleError<Car[]>('getCar() = ${id}'))
     );
   }
-
 } // end of CarService class
